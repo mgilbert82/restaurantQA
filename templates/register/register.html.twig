@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Restaurant Quai Antique | Enregistrer un patient
+{% block title %}Restaurant Quai Antique | Créer son compte
 {% endblock %}
 
 {% block content %}
-	<div class="container mt-5 pt-5 mb-5" style="width:80vw;">
-		<h1 class="text-center mb-4">Créer son compte</h1>
+	<div class="container mt-5 pt-5" style="width:80vw;">
+		<h1 class="text-center">Créer son compte</h1>
 
 		<div class="row justify-content-center align-items-center">
 			<div class="card p-4 m-4 rounded" style="width:40vw;">
 				{{ form_start(form) }}
-				<div class="row mb-4">
+				<div class="row">
 					<div class="col md-12">
 						{{ form_row(form.civility) }}
 					</div>

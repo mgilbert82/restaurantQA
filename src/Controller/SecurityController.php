@@ -7,16 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class UserController extends AbstractController
+class SecurityController extends AbstractController
 {
     #[Route(path: '/connexion', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->getUser()) {
-            $role = $this->getUser()->getRoles();
-            if (!$role) {
-                return $this->redirectToRoute('app_home');
-            }
             return $this->redirectToRoute('app_account');
         }
 
@@ -25,10 +21,7 @@ class UserController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('user/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error
-        ]);
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     #[Route(path: '/deconnexion', name: 'app_logout')]
