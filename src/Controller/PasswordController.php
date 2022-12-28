@@ -2,17 +2,25 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Form\ChangePasswordType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PasswordController extends AbstractController
 {
-    #[Route('/modifier-mon-mot-de-passe', name: 'app_password')]
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    #[Route('/compte/modifier-mon-mot-de-passe', name: 'app_password')]
     public function index(Request $request, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $notification = null;
