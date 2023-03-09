@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Jomhuria&family=Titillium+Web:wght@200;300;400&display=swap');
+
+/*
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Jomhuria', cursive;
+font-family: 'Titillium Web', sans-serif;
+color: #290001 --primary;
+color: #CE9461 --secondary;
+color: #787A91 --grey;
+color: #EEEEEE --lightgrey;
+color: #161616 --black;
+color: #FEFCF3 --white;
+
+
+*/
 
 .footer-custom {
     text-align: center;
@@ -6,4 +20,87 @@
     width: 100%;
     background-color: #DFEAFF;
     padding-top: 25px;
+}
+
+nav {
+    height: 5rem;
+}
+
+#navbarCollapse,
+ul,
+li,
+a {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #290001;
+}
+
+.navBtn {
+    color: #290001;
+    background-color: rgba(41, 0, 1, 0.3);
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow .2s;
+}
+
+.navBtn,
+a,
+i {
+    text-decoration: none !important;
+}
+
+.navBtn:hover {
+    color: #EEEEEE;
+    background-color: #290001;
+}
+
+#carouselText {
+    visibility: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#myCarousel:hover #carouselText {
+    visibility: visible;
+    opacity: 1;
+}
+
+#reservationBtnContainer {
+    width: 100%;
+    height: 60px;
+    background: #290001;
+    display: flex;
+    align-items: center;
+    padding-left: 70%;
+}
+
+#reservationBtn {
+    background-color: #CE9461;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.8em;
+    border: 1px solid #CE9461;
+    height: 1.5em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #EEEEEE;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid #EEEEEE;
+}
+
+#reservationBtn:hover {
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #CE9461;
 }
