@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La carte
+{% endblock %}
+
+{% block content %}
+	<main id="menu" class="pt-2">
+		<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+			{% for category in categories %}
+				<div class="col">
+					<div class="card mb-4 rounded-3 shadow-sm">
+						<div class="card-header py-3">
+							<h4 class="my-0 fw-normal" id="menuCategory">{{category}}</h4>
+						</div>
+						{% for dish in dishes %}
+							{% if dish.category == category %}
+								<div class="card-body">
+									<h5 class="card-title pricing-card-title" id="menuTitle">
+										{{ dish.title }}
+										|
+										<small class="text-muted fw-light">{{(dish.price/100) | format_currency('EUR') }}</small>
+									</h5>
+									<p class="list-unstyled mt-3 mb-4">
+										{{ dish.description}}
+									</p>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+				{# {{ category}}
+																																																																<div class="colour_container">
+																																																																	{% for dish in dishes %}
+																																																																		{% if dish.category == category %}
+																																																																			{{ dish.title }}
+																																																																			{{ dish.description }}
+																																																																			<br/>
+																																																																		{% endif %}
+																																																																	{% endfor %} #}
+			{% endfor %}
+		</div>
+	</div>
+</main>{% endblock %}

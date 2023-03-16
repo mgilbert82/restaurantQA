@@ -2,10 +2,11 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Dessert;
+use App\Entity\Dish;
+use App\Entity\Formule;
 use App\Entity\Image;
-use App\Entity\MainCourse;
-use App\Entity\Starter;
+use App\Entity\MealCategory;
+use App\Entity\Menu;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -49,9 +50,11 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home'),
             yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user', User::class),
             yield MenuItem::linkToCrud('Carousel', 'fa fa-image', Image::class),
-            yield MenuItem::linkToCrud('Starter', 'fa fa-carrot', Starter::class),
-            yield MenuItem::linkToCrud('Main Course', 'fa fa-burger', MainCourse::class),
-            yield MenuItem::linkToCrud('Dessert', 'fa fa-ice-cream', Dessert::class),
+            yield MenuItem::linkToCrud('Catégorie de plat', 'fa fa-hotdog', MealCategory::class),
+            yield MenuItem::linkToCrud('La carte', 'fa fa-utensils', Dish::class),
+            yield MenuItem::linkToCrud('Les menus', 'fa fa-pizza-slice', Menu::class),
+            yield MenuItem::linkToCrud('Les formules', 'fa fa-burger', Formule::class),
+
         ];
     }
 }

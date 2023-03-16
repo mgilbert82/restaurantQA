@@ -18,8 +18,15 @@ color: #FEFCF3 --white;
     text-align: center;
     position: absolute;
     width: 100%;
-    background-color: #DFEAFF;
+    background-color: #290001;
+    color: #EEEEEE;
     padding-top: 25px;
+}
+
+.footer-custom>p>a {
+    color: #CE9461;
+    font-size: 0.9em;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 nav {
@@ -103,4 +110,19 @@ i {
     text-decoration: none;
     background-color: #EEEEEE;
     color: #CE9461;
+}
+
+#menu {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#menuCategory {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2rem;
+}
+
+#menuTitle {
+    font-family: 'Jomhuria', cursive;
+    font-size: 2rem;
+
 }

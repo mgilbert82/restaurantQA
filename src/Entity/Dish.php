@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\StarterRepository;
+use App\Repository\DishRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: StarterRepository::class)]
-class Starter
+#[ORM\Entity(repositoryClass: DishRepository::class)]
+class Dish
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -22,6 +22,9 @@ class Starter
 
     #[ORM\Column]
     private ?float $price = null;
+
+    #[ORM\ManyToOne]
+    private ?mealCategory $category = null;
 
     public function getId(): ?int
     {
@@ -60,6 +63,18 @@ class Starter
     public function setPrice(float $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCategory(): ?mealCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?mealCategory $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\MainCourse;
+use App\Entity\Menu;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<MainCourse>
+ * @extends ServiceEntityRepository<Menu>
  *
- * @method MainCourse|null find($id, $lockMode = null, $lockVersion = null)
- * @method MainCourse|null findOneBy(array $criteria, array $orderBy = null)
- * @method MainCourse[]    findAll()
- * @method MainCourse[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Menu|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Menu|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Menu[]    findAll()
+ * @method Menu[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MainCourseRepository extends ServiceEntityRepository
+class MenuRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, MainCourse::class);
+        parent::__construct($registry, Menu::class);
     }
 
-    public function save(MainCourse $entity, bool $flush = false): void
+    public function save(Menu $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class MainCourseRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(MainCourse $entity, bool $flush = false): void
+    public function remove(Menu $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class MainCourseRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return MainCourse[] Returns an array of MainCourse objects
+//     * @return Menu[] Returns an array of Menu objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class MainCourseRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?MainCourse
+//    public function findOneBySomeField($value): ?Menu
 //    {
 //        return $this->createQueryBuilder('m')
 //            ->andWhere('m.exampleField = :val')
