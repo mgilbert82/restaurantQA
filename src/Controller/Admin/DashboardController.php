@@ -7,6 +7,7 @@ use App\Entity\Formule;
 use App\Entity\Image;
 use App\Entity\MealCategory;
 use App\Entity\Menu;
+use App\Entity\ScheduleDate;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -54,6 +55,7 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('La carte', 'fa fa-utensils', Dish::class),
             yield MenuItem::linkToCrud('Les menus', 'fa fa-pizza-slice', Menu::class),
             yield MenuItem::linkToCrud('Les formules', 'fa fa-burger', Formule::class),
+            yield MenuItem::linkToCrud('Les horaires', 'fa fa-calendar-days', ScheduleDate::class),
 
         ];
     }
