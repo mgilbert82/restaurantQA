@@ -4,7 +4,10 @@
 {% endblock %}
 
 {% block content %}
-	<main id="menu" class="pt-2">
+	<main
+		id="menu" class="pt-2">
+		{# {{dump(categories)}}
+				{{dump(dishes)}} #}
 		<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 			{% for category in categories %}
 				<div class="col">
@@ -28,15 +31,6 @@
 						{% endfor %}
 					</div>
 				</div>
-				{# {{ category}}
-																																																																<div class="colour_container">
-																																																																	{% for dish in dishes %}
-																																																																		{% if dish.category == category %}
-																																																																			{{ dish.title }}
-																																																																			{{ dish.description }}
-																																																																			<br/>
-																																																																		{% endif %}
-																																																																	{% endfor %} #}
 			{% endfor %}
 		</div>
 	</div>

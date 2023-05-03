@@ -21,10 +21,16 @@ class ScheduleDate
     private ?bool $open = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $openHour = null;
+    private ?\DateTimeInterface $openHourAM = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $closeHour = null;
+    private ?\DateTimeInterface $closeHourAM = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $openHourPM = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $closeHourPM = null;
 
     public function getId(): ?int
     {
@@ -55,26 +61,50 @@ class ScheduleDate
         return $this;
     }
 
-    public function getOpenHour(): ?\DateTimeInterface
+    public function getOpenHourAM(): ?\DateTimeInterface
     {
-        return $this->openHour;
+        return $this->openHourAM;
     }
 
-    public function setOpenHour(?\DateTimeInterface $openHour): self
+    public function setOpenHourAM(?\DateTimeInterface $openHourAM): self
     {
-        $this->openHour = $openHour;
+        $this->openHourAM = $openHourAM;
 
         return $this;
     }
 
-    public function getCloseHour(): ?\DateTimeInterface
+    public function getCloseHourAM(): ?\DateTimeInterface
     {
-        return $this->closeHour;
+        return $this->closeHourAM;
     }
 
-    public function setCloseHour(?\DateTimeInterface $closeHour): self
+    public function setCloseHourAM(?\DateTimeInterface $closeHourAM): self
     {
-        $this->closeHour = $closeHour;
+        $this->closeHourAM = $closeHourAM;
+
+        return $this;
+    }
+
+    public function getOpenHourPM(): ?\DateTimeInterface
+    {
+        return $this->openHourPM;
+    }
+
+    public function setOpenHourPM(?\DateTimeInterface $openHourPM): self
+    {
+        $this->openHourPM = $openHourPM;
+
+        return $this;
+    }
+
+    public function getCloseHourPM(): ?\DateTimeInterface
+    {
+        return $this->closeHourPM;
+    }
+
+    public function setCloseHourPM(?\DateTimeInterface $closeHourPM): self
+    {
+        $this->closeHourPM = $closeHourPM;
 
         return $this;
     }

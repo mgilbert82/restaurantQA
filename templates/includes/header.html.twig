@@ -1,0 +1,46 @@
+<header>
+	<!-- /.navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+		<a class="navbar-brand" href="/">
+			<img src="assets/image/logoQA.svg" alt="Logo-Quai-Antique" style="width:8rem;">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ms-end mx-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('app_home') }}">Accueil
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="/menu">La carte
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Réserver
+					</a>
+				</li>
+			</ul>
+			<div class="navbar-item-custom">
+				{% if app.user %}
+
+					<a href="{{ path('app_account') }}">
+						<i class="bi bi-person-circle"></i>
+						Mon compte
+						<small>({{ app.user.firstname }})</small>
+					</a>
+					|
+					<a href="{{ path('app_logout') }}" class="navBtn">
+						<i class="bi bi-box-arrow-left"></i>
+						Se déconnecter
+					</a>
+				{% else %}
+					<a href="{{ path('app_login') }}" class="navBtn">
+						<i class="bi bi-box-arrow-in-right"></i>
+						Se connecter</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</header>

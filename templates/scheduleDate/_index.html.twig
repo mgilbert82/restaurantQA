@@ -1,0 +1,22 @@
+{# {{ dump(scheduleDates)}} #}
+<table>
+	{% for scheduleDate in scheduleDates %}
+		<tr>
+			<th>{{scheduleDate.dayOfTheWeek| title }}</th>
+			<td>
+				{{(scheduleDate.open) == 1 ?
+            scheduleDate.openHourAM|format_datetime('none', 'short', locale='fr') : "Fermé" }}
+				{{(scheduleDate.open) == 1 ?
+            scheduleDate.closeHourAM|format_datetime('none', 'short', locale='fr') : "" }}
+			</td>
+			<td>
+				{{(scheduleDate.open) == 1 ?
+            scheduleDate.openHourAM|format_datetime('none', 'short', locale='fr')
+            : "" }}
+				{{(scheduleDate.open) == 1 ?
+            scheduleDate.closeHourPM|format_datetime('none', 'short', locale='fr')
+            : "" }}
+			</td>
+		</tr>
+	{% endfor %}
+</table>

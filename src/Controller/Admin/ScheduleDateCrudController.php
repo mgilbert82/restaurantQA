@@ -7,8 +7,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
 
 class ScheduleDateCrudController extends AbstractCrudController
@@ -27,6 +25,7 @@ class ScheduleDateCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+
         return [
             ChoiceField::new('dayOfTheWeek')
                 ->setLabel('Jour')
@@ -42,8 +41,10 @@ class ScheduleDateCrudController extends AbstractCrudController
                     ]
                 ),
             BooleanField::new('open')->setLabel('Ouvert'),
-            TimeField::new('open_hour')->setLabel('Ouverture'),
-            TimeField::new('close_hour')->setLabel('Fermeture')
+            TimeField::new('open_hour_am')->setLabel('Ouverture matin'),
+            TimeField::new('close_hour_am')->setLabel('Fermeture matin'),
+            TimeField::new('open_hour_pm')->setLabel('Ouverture soir'),
+            TimeField::new('close_hour_pm')->setLabel('Fermeture soir')
         ];
     }
 }
