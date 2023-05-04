@@ -23,7 +23,8 @@ class DishCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Recette');
+            ->setEntityLabelInSingular('une ')
+            ->setPageTitle(Crud::PAGE_INDEX, 'La carte du restaurant');
     }
 
     public function configureFields(string $pageName): iterable

@@ -42,21 +42,24 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('RestaurantQA');
+            ->setTitle('Restaurant Quai Antique')
+            //->disableDarkMode()
+            ->setFaviconPath('favicon.ico');
     }
 
     public function configureMenuItems(): iterable
     {
         return [
-            yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home'),
-            yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user', User::class),
-            yield MenuItem::linkToCrud('Carousel', 'fa fa-image', Image::class),
-            yield MenuItem::linkToCrud('Catégorie de plat', 'fa fa-hotdog', MealCategory::class),
+            //yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home'),
+            yield MenuItem::section('Gestion du restaurant'),
+            yield MenuItem::linkToCrud('Les horaires', 'fa fa-calendar-days', ScheduleDate::class),
+            yield MenuItem::linkToCrud('Les clients', 'fa fa-user', User::class),
+            yield MenuItem::linkToCrud('Le carousel', 'fa fa-image', Image::class),
+            yield MenuItem::section('Gestion gourmandes'),
+            yield MenuItem::linkToCrud('Les catégories', 'fa fa-hotdog', MealCategory::class),
             yield MenuItem::linkToCrud('La carte', 'fa fa-utensils', Dish::class),
             yield MenuItem::linkToCrud('Les menus', 'fa fa-pizza-slice', Menu::class),
             yield MenuItem::linkToCrud('Les formules', 'fa fa-burger', Formule::class),
-            yield MenuItem::linkToCrud('Les horaires', 'fa fa-calendar-days', ScheduleDate::class),
-
         ];
     }
 }
