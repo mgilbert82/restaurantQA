@@ -7,6 +7,7 @@ use App\Entity\Formule;
 use App\Entity\Image;
 use App\Entity\MealCategory;
 use App\Entity\Menu;
+use App\Entity\RoomManagement;
 use App\Entity\ScheduleDate;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -53,6 +54,7 @@ class DashboardController extends AbstractDashboardController
             //yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home'),
             yield MenuItem::section('Gestion du restaurant'),
             yield MenuItem::linkToCrud('Les horaires', 'fa fa-calendar-days', ScheduleDate::class),
+            yield MenuItem::linkToCrud('La salle', 'fa fa-gear', RoomManagement::class),
             yield MenuItem::linkToCrud('Les clients', 'fa fa-user', User::class),
             yield MenuItem::linkToCrud('Le carousel', 'fa fa-image', Image::class),
             yield MenuItem::section('Gestion gourmandes'),
