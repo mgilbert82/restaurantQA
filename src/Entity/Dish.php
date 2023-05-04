@@ -24,7 +24,7 @@ class Dish
     private ?float $price = null;
 
     #[ORM\ManyToOne]
-    private ?mealCategory $category = null;
+    private ?MealCategory $category = null;
 
     public function getId(): ?int
     {
@@ -77,5 +77,10 @@ class Dish
         $this->category = $category;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->category;
     }
 }

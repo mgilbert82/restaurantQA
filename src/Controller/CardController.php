@@ -23,7 +23,7 @@ class CardController extends AbstractController
         //$dishes = $this->entityManager->getRepository(Dish::class)->findAll();
 
         $query = $this->entityManager->createQueryBuilder()
-            ->select('c.name as category', 'd.title', 'd.description', 'd.price')
+            ->select('c.name as category', 'd.title as title', 'd.description as description', 'd.price as price')
             ->from(Dish::class, 'd')
             ->innerjoin(MealCategory::class, 'c', 'WITH', 'd.category = c.id')
             ->groupBy('d.category')
