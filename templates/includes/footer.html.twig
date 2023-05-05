@@ -1,14 +1,30 @@
 <footer class="footer-custom">
-	<div class="leftColumn">&copy; 2022 Quai Antique<br/>
-		<small>Restaurant 100% naturel
-		</small>
-		<a href="#">Privacy</a>
-		&middot;
-		<a href="#">Terms</a>
+	<div class="logoFooter">
+		<img src="/assets/image/logoQA_white.png" alt="">
+		<br>
+		<small>Restaurant 100% naturel</small>
+		<hr>
 	</div>
-	<div class="rightColumn">
+	<div class="schedule">
 		<h4>Horaire du restaurant</h4>
 		<hr>
 		{{ render(controller("App\\Controller\\ScheduleDateController::getSchedule")) }}
+	</div>
+	<div class="socialMedia">
+		<div class="icons">
+			<a href="#"><img src="/assets/image/facebook.svg" alt="logo-facebook" class="icon"></a>
+			<a href="#"><img src="/assets/image/instagram.svg" alt="logo-instagram" class="icon"></a>
+			<a href="#"><img src="/assets/image/linkedin.svg" alt="logo-linkedin" class="icon"></a>
+			<a href="#"><img src="/assets/image/twitter.svg" alt="logo-twitter" class="icon"></a>
+		</div>
+		<div class="legalMentions">
+			<a href="#">Presse</a>
+			&middot;
+			<a href="#">Contact</a>
+			&middot;
+			<a href="#">Mentions légales</a>
+			<br>
+			<p>&copy; Copyright 2022 Quai Antique</p>
+		</div>
 	</div>
 </footer>

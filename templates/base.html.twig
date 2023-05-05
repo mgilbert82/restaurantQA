@@ -13,7 +13,10 @@
 		<link
 		rel="stylesheet" href="{{ asset('assets/style/main.css') }}">
 		<!-- Custom styles for this template -->
-		<link href="{{ asset('assets/style/carousel.css')}}" rel="stylesheet">
+		<link
+		href="{{ asset('assets/style/carousel.css')}}" rel="stylesheet">
+		<!-- Font Awesome Icons -->
+		<script src="https://kit.fontawesome.com/508fc1bf5b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		{% include "includes/header.html.twig" %}
@@ -57,7 +60,7 @@
 				{% endif %}
 				<div
 					class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										">
 					<!-- Three columns of text below the carousel -->
 
 					{% block content %}{% endblock %}
