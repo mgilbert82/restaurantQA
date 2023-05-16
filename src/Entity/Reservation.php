@@ -21,7 +21,7 @@ class Reservation
     private ?\DateTimeInterface $hour = null;
 
     #[ORM\Column]
-    private ?int $numberOfReservation = null;
+    private ?int $reservationCount = null;
 
     public function getId(): ?int
     {
@@ -52,14 +52,14 @@ class Reservation
         return $this;
     }
 
-    public function getNumberOfReservation(): ?int
+    public function getreservationCount(): ?int
     {
-        return $this->numberOfReservation;
+        return $this->reservationCount;
     }
 
-    public function setNumberOfReservation(int $numberOfReservation): self
+    public function setreservationCount(int $reservationCount): self
     {
-        $this->numberOfReservation = $numberOfReservation;
+        $this->reservationCount = $reservationCount;
 
         return $this;
     }
