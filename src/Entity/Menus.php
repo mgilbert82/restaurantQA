@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\MenuRepository;
+use App\Repository\MenusRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MenuRepository::class)]
-class Menu
+#[ORM\Entity(repositoryClass: MenusRepository::class)]
+class Menus
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,12 +18,12 @@ class Menu
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\ManyToMany(targetEntity: Formule::class, inversedBy: 'description')]
-    private Collection $description;
+    #[ORM\ManyToMany(targetEntity: Formules::class, inversedBy: 'menuses')]
+    private Collection $relation;
 
     public function __construct()
     {
-        $this->description = new ArrayCollection();
+        $this->relation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,25 +44,25 @@ class Menu
     }
 
     /**
-     * @return Collection<int, formule>
+     * @return Collection<int, Formules>
      */
-    public function getDescription(): Collection
+    public function getRelation(): Collection
     {
-        return $this->description;
+        return $this->relation;
     }
 
-    public function addDescription(formule $description): self
+    public function addRelation(Formules $relation): self
     {
-        if (!$this->description->contains($description)) {
-            $this->description->add($description);
+        if (!$this->relation->contains($relation)) {
+            $this->relation->add($relation);
         }
 
         return $this;
     }
 
-    public function removeDescription(formule $description): self
+    public function removeRelation(Formules $relation): self
     {
-        $this->description->removeElement($description);
+        $this->relation->removeElement($relation);
 
         return $this;
     }

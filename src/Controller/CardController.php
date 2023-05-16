@@ -32,6 +32,7 @@ class CardController extends AbstractController
 
 
         $dishes = $query->getResult();
+        //var_dump($dishes);
 
         $categories = array();
         foreach ($dishes as $dish) {

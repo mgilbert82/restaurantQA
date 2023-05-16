@@ -4,9 +4,11 @@ namespace App\Controller\Admin;
 
 use App\Entity\Dish;
 use App\Entity\Formule;
+use App\Entity\Formules;
 use App\Entity\Image;
 use App\Entity\MealCategory;
 use App\Entity\Menu;
+use App\Entity\Menus;
 use App\Entity\RoomManagement;
 use App\Entity\ScheduleDate;
 use App\Entity\User;
@@ -60,8 +62,8 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::section('Gestion gourmandes'),
             yield MenuItem::linkToCrud('Les catégories', 'fa fa-hotdog', MealCategory::class),
             yield MenuItem::linkToCrud('La carte', 'fa fa-utensils', Dish::class),
-            yield MenuItem::linkToCrud('Les menus', 'fa fa-pizza-slice', Menu::class),
-            yield MenuItem::linkToCrud('Les formules', 'fa fa-burger', Formule::class),
+            yield MenuItem::linkToCrud('Les menus', 'fa fa-pizza-slice', Menus::class),
+            yield MenuItem::linkToCrud('Les formules', 'fa fa-burger', Formules::class),
         ];
     }
 }

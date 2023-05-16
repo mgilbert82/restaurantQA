@@ -2,19 +2,22 @@
 
 namespace App\Entity;
 
-use App\Repository\FormuleRepository;
+use App\Repository\FormulesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: FormuleRepository::class)]
-class Formule
+#[ORM\Entity(repositoryClass: FormulesRepository::class)]
+class Formules
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
@@ -22,17 +25,29 @@ class Formule
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Menu::class, mappedBy: 'description')]
-    private Collection $menus;
+    #[ORM\ManyToMany(targetEntity: Menus::class, mappedBy: 'relation')]
+    private Collection $menuses;
 
     public function __construct()
     {
-        $this->menus = new ArrayCollection();
+        $this->menuses = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
     }
 
     public function getDescription(): ?string
@@ -60,27 +75,27 @@ class Formule
     }
 
     /**
-     * @return Collection<int, Menu>
+     * @return Collection<int, Menus>
      */
-    public function getMenus(): Collection
+    public function getMenuses(): Collection
     {
-        return $this->menus;
+        return $this->menuses;
     }
 
-    public function addMenu(Menu $menu): self
+    public function addMenus(Menus $menus): self
     {
-        if (!$this->menus->contains($menu)) {
-            $this->menus->add($menu);
-            $menu->addDescription($this);
+        if (!$this->menuses->contains($menus)) {
+            $this->menuses->add($menus);
+            $menus->addRelation($this);
         }
 
         return $this;
     }
 
-    public function removeMenu(Menu $menu): self
+    public function removeMenus(Menus $menus): self
     {
-        if ($this->menus->removeElement($menu)) {
-            $menu->removeDescription($this);
+        if ($this->menuses->removeElement($menus)) {
+            $menus->removeRelation($this);
         }
 
         return $this;
@@ -88,6 +103,6 @@ class Formule
 
     public function __toString()
     {
-        return $this->description . ' ' . ($this->price) / 100 . ' €';
+        return $this->title . ' ' . $this->description . ' ' . ($this->price) / 100 . ' €';
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Menu;
+use App\Entity\Menus;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -12,7 +12,7 @@ class MenuCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Menu::class;
+        return Menus::class;
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -26,7 +26,7 @@ class MenuCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title', 'Titre'),
-            AssociationField::new('description'),
+            AssociationField::new('relation'),
         ];
     }
 }
