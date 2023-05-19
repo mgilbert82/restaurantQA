@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Formule déjeuner",
+        "description": "Du lundi au vendredi \n Entrée + plat + dessert",
+        "price": 29.90,
+        "menu": "Menu Classique"
+    },
+    {
+        "title": "Formule Diner",
+        "description": "Du lundi au dimanche \n Entrée + plat ou plat + dessert",
+        "price": 25.90,
+        "menu": "Menu Classique"
+    },
+    {
+        "title": "Formule Bistronomique",
+        "description": "Du lundi au vendredi \n Plat + Café ou Plat + Dessert",
+        "price": 22.90,
+        "menu": "Menu Bistronomique"
+    },
+    {
+        "title": "Formule Le petit Savoyard",
+        "description": "Du lundi au dimanche \n Plat + Dessert",
+        "price": 15.90,
+        "menu": "Menu Classique"
+    }
+]

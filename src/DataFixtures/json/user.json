@@ -1,0 +1,30 @@
+[
+    {
+        "civility": "Monsieur",
+        "firstname": "Michel",
+        "lastname": "Gilbert",
+        "password": "mgilbert1234",
+        "email": "michelgilbert@hotmail.fr",
+        "roles": [
+            "ROLE_ADMIN"
+        ]
+    },
+    {
+        "civility": "Monsieur",
+        "firstname": "Admin",
+        "lastname": "Studi",
+        "password": "adminstudi1234",
+        "email": "adminStudi@studi.fr",
+        "roles": [
+            "ROLE_ADMIN"
+        ]
+    },
+    {
+        "civility": "Madame",
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "password": "janeDoe1234",
+        "email": "janedo@mail.fr",
+        "roles": ""
+    }
+]

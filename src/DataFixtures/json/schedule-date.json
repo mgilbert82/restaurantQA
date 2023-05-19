@@ -1,0 +1,58 @@
+[
+    {
+        "dayOfTheWeek": "Lundi",
+        "open": true,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    },
+    {
+        "dayOfTheWeek": "Mardi",
+        "open": true,
+        "openHourAM": "2023-05-19 12:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-19 18:00:00",
+        "closeHourPM": "2023-05-19 22:30:00"
+    },
+    {
+        "dayOfTheWeek": "Mercredi",
+        "open": true,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    },
+    {
+        "dayOfTheWeek": "Jeudi",
+        "open": false,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    },
+    {
+        "dayOfTheWeek": "Vendredi",
+        "open": true,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    },
+    {
+        "dayOfTheWeek": "Samedi",
+        "open": true,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    },
+    {
+        "dayOfTheWeek": "Dimanche",
+        "open": true,
+        "openHourAM": "2023-05-19 10:00:00",
+        "closeHourAM": "2023-05-19 15:00:00",
+        "openHourPM": "2023-05-1918:00:00",
+        "closeHourPM": "2023-05-1922:30:00"
+    }
+]

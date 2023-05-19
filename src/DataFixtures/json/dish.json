@@ -1,0 +1,56 @@
+[
+    {
+        "title": "SALADE SAVOYARDE",
+        "description": "Salade, tomates, jambon cru de Savoie, Abondance, noix",
+        "price": 9.90,
+        "category": 1
+    },
+    {
+        "title": "SALADE DU CHALET",
+        "description": "Salade, tomates, lardons fumés, myrtilles, croustillant de Reblochon",
+        "price": 8.90,
+        "category": 1
+    },
+    {
+        "title": "SALADE DES ALPAGES AU GRISON",
+        "description": "Salade, tomates, toast au jambon blanc et raclette au lait cru",
+        "price": 12.90,
+        "category": 1
+    },
+    {
+        "title": "TARTIFLETTE LARDONS",
+        "description": "Pommes de terre, crème, oignons, reblochon, lardons, accompagnée de salade verte",
+        "price": 13.90,
+        "category": 2
+    },
+    {
+        "title": "TARTIFLETTE AUX CÈPES",
+        "description": "Pommes de terre, crème, reblochon, cèpes, accompagnée de salade verte",
+        "price": 16.90,
+        "category": 2
+    },
+    {
+        "title": "DIOTS AU VIN BLANC",
+        "description": "Saucisses de Savoie fumées cuites au vin blanc et crème",
+        "price": 18.90,
+        "category": 2
+    },
+    {
+        "title": "MI-CUIT TOUT CHOCOLAT",
+        "description": "mi-cuit sauce chocolat chaud, glace chocolat, chantilly",
+        "price": 8.90,
+        "category": 3
+    },
+    {
+        "title": "CRÈME BRÛLÉE",
+        "description": "Crème vanille brulée au génépi",
+        "price": 6.90,
+        "category": 3
+    },
+    {
+        "title": "PROFITEROLES AU CHOCOLAT",
+        "description": "Choux à la crème fourrée au chocolat maison",
+        "price": 7.90,
+        "category": 3
+    }
+]
