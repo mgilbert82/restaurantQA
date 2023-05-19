@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CardController extends AbstractController
 {
     private $entityManager;
+
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -20,7 +21,6 @@ class CardController extends AbstractController
     #[Route('/menu', name: 'app_menu')]
     public function index(): Response
     {
-        //$dishes = $this->entityManager->getRepository(Dish::class)->findAll();
 
         $query = $this->entityManager->createQueryBuilder()
             ->select('c.name as category', 'd.title as title', 'd.description as description', 'd.price as price')
@@ -32,7 +32,6 @@ class CardController extends AbstractController
 
 
         $dishes = $query->getResult();
-        //var_dump($dishes);
 
         $categories = array();
         foreach ($dishes as $dish) {

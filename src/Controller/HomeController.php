@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Formules;
 use App\Entity\Image;
 use App\Entity\Menus;
 use Doctrine\ORM\EntityManagerInterface;
@@ -31,15 +30,11 @@ class HomeController extends AbstractController
             ->getQuery();
 
         $menus = $query->getResult();
-        //dd($menus);
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'carousels' => $carousel,
             'menus' => $menus,
-            //'formules' => $formules,
-            // 'menu_description' => $menuDescription,
-            //'formules' => $formules,
         ]);
     }
 }
