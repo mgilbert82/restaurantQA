@@ -80,6 +80,11 @@ php bin/console doctrine:migrations:migrate
 ```
 
 Create Fixtures
+This command creates automatically fixtures in the database for menu, dish, meal, image for the Carousel.. and also create an admin profile to connect to the admin interface.
+
+user: adminStudi@studi.fr
+password: adminstudi1234
+
 ```bash
 php bin/console doctrine:fixtures:load
 ```
