@@ -1,11 +1,14 @@
 [
     {
+        "id": 0,
         "name": "Entrée"
     },
     {
+        "id": 1,
         "name": "Plat"
     },
     {
+        "id": 2,
         "name": "Dessert"
     }
 ]
