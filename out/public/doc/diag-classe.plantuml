@@ -1,0 +1,131 @@
+@startuml
+
+class User {
+    - firstname: varchar
+    - lastname: varchar
+    - email: varchar {unique}
+    - password: varchar
+    - roles: json[]
+    + getId()
+    + setFirstname()
+    + getFirstname()
+    + setLastname()
+    + setEmail()
+    + getEmail()
+    + setUserInfos()
+    + getUserInfos()
+
+}
+
+class User_infos {
+    - number_of_cover: integer
+    - allergies_description: text
+    + getId()
+    + setNumberOfCover()
+    + getNumberOfCover()
+    + setAllergiesDescription()
+    + getAllergiesDescription()
+    + setUser()
+    + getUser()
+}
+
+User "0..1"  -- "1..*" User_infos : possède
+
+
+class Reservation {
+    - date: date {unique}
+    - hour: time
+    - reservation_count: integer
+    + getId()
+    + setDate()
+    + getDate()
+    + setHour()
+    + getHour()
+    + setReservationCount()
+    + getReservationCount()
+}
+
+User "1..*" -- "0..*" Reservation: réserve
+
+class Dish{
+    - title: varchar
+    - description: text
+    - price: float
+    + getId()
+    + setTitle()
+    + getTitle()
+    + setDescription()
+    + getDescription()
+    + setPrice()
+    + getPrice()
+    + setCategory()
+    + getCategory()
+    + __tovarchar()
+}
+
+class Meal_category {
+    - name: varchar
+    + getId()
+    + setName()
+    + getName()
+    + __tovarchar()
+}
+
+Dish "0..*" -- "0..1" Meal_category: possède
+
+class Menus {
+    - title: varchar
+    + getId()
+    + setTitle()
+    + getTitle()
+    + getRelation()
+    + addRelation()
+    + removeRelation()
+}
+
+class Formules {
+    - title: varchar
+    - description: text
+    - price: decimal
+    + getID()
+    + setTitle()
+    + getTitle()
+    + setDescription()
+    + getDescription()
+    + setPrice()
+    + getPrice()
+    + getMenus()
+    + addMenus()
+    + removeMenus()
+}
+
+Menus "0..*" -- "0..*" Formules: possède
+
+class Room_management {
+    - number_of_guest: integer
+    - max_threshold: time
+    + getId()
+    + setNumberOfGuest()
+    + setNumberOfGuest()
+    + setMaxThreshold()
+    + getMaxThreshold()
+}
+
+class schedule_date {
+    - day_of_the_week: varchar
+    - open_hour_am: time
+    - close_hour_am: time
+    - open_hour_pm: time
+    - close_hour_pm: time
+    + setDayOfTheWeek()
+    + getDAyOfTheWeek()
+    + setOpenHourAM()
+    + getOpenHourAM()
+    + setCloseHourAM()
+    + getCloseHourAM()
+    + setOpenHourPM()
+    + getOpenHourPM()
+    + setCloseHourPM()
+    + getCloseHourPM()
+}
+@enduml
