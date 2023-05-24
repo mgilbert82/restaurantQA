@@ -19,11 +19,11 @@ class Menus
     private ?string $title = null;
 
     #[ORM\ManyToMany(targetEntity: Formules::class, inversedBy: 'menuses')]
-    private Collection $formules;
+    private Collection $formule;
 
     public function __construct()
     {
-        $this->formules = new ArrayCollection();
+        $this->formule = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -46,15 +46,15 @@ class Menus
     /**
      * @return Collection<int, Formules>
      */
-    public function getFormules(): Collection
+    public function getFormule(): Collection
     {
-        return $this->formules;
+        return $this->formule;
     }
 
     public function addFormule(Formules $formule): self
     {
-        if (!$this->formules->contains($formule)) {
-            $this->formules->add($formule);
+        if (!$this->formule->contains($formule)) {
+            $this->formule->add($formule);
         }
 
         return $this;
@@ -62,7 +62,7 @@ class Menus
 
     public function removeFormule(Formules $formule): self
     {
-        $this->formules->removeElement($formule);
+        $this->formule->removeElement($formule);
 
         return $this;
     }

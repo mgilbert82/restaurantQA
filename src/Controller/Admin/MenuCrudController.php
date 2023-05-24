@@ -26,7 +26,7 @@ class MenuCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title', 'Titre'),
-            AssociationField::new('formules'),
+            AssociationField::new('formule'),
         ];
     }
 }
