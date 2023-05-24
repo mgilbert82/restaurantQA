@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte | Restaurant Quai Antique
+{% endblock %}
+
+{% block content %}
+	<div class="container mt-5 pt-5">
+		<h1>Modifier mes informations</h1>
+		<div class="container-block">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card m-3">
+						<div class="container-block">
+							{% if is_granted('ROLE_USER') %}
+								<div class="row">
+									<div class="col-md-12">
+										<div class="card m-3">
+											<div class="card-body">
+												<h6 class"card-title">Personnaliser vos réservations</h6>
+												<hr>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+
+						</div>
+					</div>
+				{% endblock %}

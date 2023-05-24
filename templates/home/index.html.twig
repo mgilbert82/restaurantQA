@@ -14,12 +14,12 @@
 						<div class="card-header py-3">
 							<h4 class="my-0 fw-normal" id="menuCategory">{{menu.title}}</h4>
 						</div>
-						{% for formule in menu.relation %}
+						{% for formule in menu.formules %}
 							<div class="card-body">
 								<h5 class="card-title pricing-card-title" id="menuTitle">
 									{{ formule.title }}
 									|
-									<small class="text-muted fw-light">{{(formule.price) | format_currency('EUR') }}</small>
+									<small class="text-muted fw-light">{{(formule.price/100) | format_currency('EUR') }}</small>
 								</h5>
 								<p class="list-unstyled mt-3 mb-4">
 									{{ formule.description|nl2br }}

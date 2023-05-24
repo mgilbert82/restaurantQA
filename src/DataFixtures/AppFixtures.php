@@ -81,33 +81,31 @@ class AppFixtures extends Fixture
         //load Meals Data Json
         $mealDatas = json_decode(file_get_contents(__DIR__ . '/json/meal-category.json'), true);
 
-        //Create Meals
-        foreach ($mealDatas as $id => $mealData) {
-
-            $meal = new MealCategory();
-
-            $meal->setName($mealData['name']);
-            $this->setReference("meal" . $id, $meal);
-            $manager->persist($meal);
-        }
-
         //load Dish Data Json
         $dishDatas = json_decode(file_get_contents(__DIR__ . '/json/dish.json'), true);
 
         //Create Meals
-        foreach ($dishDatas as $dishData) {
+        foreach ($mealDatas as $mealData) {
 
-            $dish = new Dish();
+            $meal = new MealCategory();
 
-            $dish->setTitle($dishData['title'])
-                ->setDescription($dishData['description'])
-                ->setPrice($dishData['price'])
-                ->setCategory($meal);
+            $meal->setName($mealData['name']);
+            $this->setReference("meal", $meal);
+            $manager->persist($meal);
 
+            //Create Meals
+            foreach ($dishDatas as $dishData) {
 
-            $manager->persist($dish);
+                $dish = new Dish();
+
+                $dish->setTitle($dishData['title'])
+                    ->setDescription($dishData['description'])
+                    ->setPrice($dishData['price'])
+                    ->setCategory($meal);
+
+                $manager->persist($dish);
+            }
         }
-        dd($meal);
 
         //load Image Data Json
         $imageDatas = json_decode(file_get_contents(__DIR__ . '/json/images.json'), true);
@@ -161,9 +159,6 @@ class AppFixtures extends Fixture
 
             $manager->persist($roomManagement);
         }
-
-
-
         $manager->flush();
     }
 }

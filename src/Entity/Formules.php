@@ -25,7 +25,7 @@ class Formules
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
     private ?string $price = null;
 
-    #[ORM\ManyToMany(targetEntity: Menus::class, mappedBy: 'relation')]
+    #[ORM\ManyToMany(targetEntity: Menus::class, mappedBy: 'formules')]
     private Collection $menuses;
 
     public function __construct()
@@ -69,7 +69,7 @@ class Formules
 
     public function setPrice(string $price): self
     {
-        $this->price = $price;
+        $this->price = $price * 100;
 
         return $this;
     }
@@ -86,7 +86,7 @@ class Formules
     {
         if (!$this->menuses->contains($menus)) {
             $this->menuses->add($menus);
-            $menus->addRelation($this);
+            $menus->addFormule($this);
         }
 
         return $this;
@@ -95,7 +95,7 @@ class Formules
     public function removeMenus(Menus $menus): self
     {
         if ($this->menuses->removeElement($menus)) {
-            $menus->removeRelation($this);
+            $menus->removeFormule($this);
         }
 
         return $this;
@@ -103,6 +103,6 @@ class Formules
 
     public function __toString()
     {
-        return $this->title . ' ' . $this->description . ' ' . ($this->price) / 100 . ' €';
+        return $this->title . ' ' . $this->description . ' ' . ($this->price / 100) . ' €';
     }
 }

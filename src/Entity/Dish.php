@@ -62,7 +62,7 @@ class Dish
 
     public function setPrice(float $price): self
     {
-        $this->price = $price;
+        $this->price = $price * 100;
 
         return $this;
     }
